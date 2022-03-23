@@ -92,6 +92,34 @@ section {
           transform: translateY(0) scale(1);
 }
 
+.active {
+  display: block;
+  -webkit-animation: scaleAnim 1s ease-in-out;
+          animation: scaleAnim 1s ease-in-out;
+}
+
+@-webkit-keyframes scaleAnim {
+  0% {
+    -webkit-transform: translateY(-100%) scaleY(0);
+            transform: translateY(-100%) scaleY(0);
+  }
+  100% {
+    -webkit-transform: translateY(0) scaleY(1);
+            transform: translateY(0) scaleY(1);
+  }
+}
+
+@keyframes scaleAnim {
+  0% {
+    -webkit-transform: translateY(-100%) scaleY(0);
+            transform: translateY(-100%) scaleY(0);
+  }
+  100% {
+    -webkit-transform: translateY(0) scaleY(1);
+            transform: translateY(0) scaleY(1);
+  }
+}
+
 .controlls {
   position: fixed;
   z-index: 10;
@@ -112,6 +140,16 @@ section {
           justify-content: center;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
+}
+
+.controlls .active-btn {
+  background-color: var(--color-secondary) !important;
+  -webkit-transition: all .4 ease-in-out;
+  transition: all .4 ease-in-out;
+}
+
+.controlls .active-btn i {
+  color: var(--color-white) !important;
 }
 
 .controlls .control {
@@ -137,6 +175,7 @@ section {
 
 .controlls .control i {
   font-size: 1.2rem;
+  color: var(--color-grey2);
   pointer-events: none;
 }
 /*# sourceMappingURL=style.css.map */

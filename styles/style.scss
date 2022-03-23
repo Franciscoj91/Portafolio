@@ -82,6 +82,19 @@ section {
     transform: translateY(0) scale(1);
 }
 
+.active {
+    display: block;
+    animation: scaleAnim 1s ease-in-out;
+    @keyframes scaleAnim {
+        0% {
+            transform: translateY(-100%) scaleY(0);
+        }
+        100% {
+            transform: translateY(0) scaleY(1);
+        }
+    }
+}
+
 //Controlls
 .controlls {
     position: fixed;
@@ -93,6 +106,13 @@ section {
     align-items: center;
     justify-content: center;
     transform: translateY(-50%);
+    .active-btn {
+        background-color: var(--color-secondary) !important;
+        transition: all .4 ease-in-out;
+        i {
+            color: var(--color-white) !important;
+        }
+    }
     .control {
         padding: 1rem;
         cursor: pointer;
@@ -107,9 +127,10 @@ section {
         box-shadow: var(--box-shadow-1);
         i {
             font-size: 1.2rem;
-            color:var(--color-grey2)
+            color:var(--color-grey2);
             pointer-events: none;
         }
     }
-}
 
+
+}
